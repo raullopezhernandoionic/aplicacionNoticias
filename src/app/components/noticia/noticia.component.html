@@ -1,0 +1,19 @@
+<ion-card color='dark'>
+  <ion-card-header color="dark">
+    <ion-card-subtitle>
+      <span class="text-primary"> {{indice +1}} </span>
+      <span class="noticia-source-name">{{noticia.source.name}}</span>
+      <div class="new-more">
+        <ion-button (click)="throwButton()" fill="clear">
+
+          <ion-icon name="ellipsis-vertical-outline" slot="end"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-card-subtitle>
+    <ion-card-title (click)="openNew()">{{noticia.title}}</ion-card-title>
+  </ion-card-header>
+  <ion-img color="dark" class="animated fadeIn fast" (click)="openNew()" *ngIf="noticia.urlToImage" [src]="noticia.urlToImage"></ion-img>
+</ion-card>
+<ion-card-content color="dark">
+  <p>{{noticia.description}}</p>
+</ion-card-content>
